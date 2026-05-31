@@ -154,6 +154,7 @@ export default function Home() {
           setStatusFilter={setStatusFilter}
           setScopeFilter={setScopeFilter}
           revokeConsent={revokeConsent}
+          filteredConsents={filteredConsents}
         />
       }
     >
