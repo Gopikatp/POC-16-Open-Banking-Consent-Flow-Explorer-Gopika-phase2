@@ -9,11 +9,11 @@ Real Rails Intelligence Dashboard for visualizing Open Banking consent managemen
 > Add your dashboard screenshot after capturing it.
 
 ```text
-screenshots/dashboard.png
+screenshots/Dashboard.png
 ```
 
 ```markdown
-![Dashboard Preview](screenshots/dashboard.png)
+![Dashboard Preview](screenshots/Dashboard.png)
 ```
 
 ---
