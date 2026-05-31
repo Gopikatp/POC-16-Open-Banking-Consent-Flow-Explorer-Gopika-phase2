@@ -7,6 +7,7 @@ import Sidebar from "@/components/dashboard/Sidebar";
 import MetricsCards from "@/components/dashboard/MetricsCards";
 import ConsentFlowChart from "@/components/dashboard/ConsentFlowChart";
 import AuditLog from "@/components/dashboard/AuditLog";
+import ConsentFlowDiagram from "@/components/dashboard/ConsentFlowDiagram";
 
 import api from "@/lib/api";
 
@@ -186,6 +187,7 @@ export default function Home() {
         />
 
         <ConsentFlowChart data={scopeData} />
+        <ConsentFlowDiagram />
 
         <AuditLog
           consents={filteredConsents}
