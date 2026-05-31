@@ -6,6 +6,7 @@ import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import Sidebar from "@/components/dashboard/Sidebar";
 import MetricsCards from "@/components/dashboard/MetricsCards";
 import ConsentFlowChart from "@/components/dashboard/ConsentFlowChart";
+import AuditLog from "@/components/dashboard/AuditLog";
 
 import api from "@/lib/api";
 
@@ -20,6 +21,16 @@ interface ScopeData {
   count: number;
 }
 
+interface Consent {
+  id: string;
+  bank: string;
+  scope: string;
+  status: string;
+  created_at: string;
+  expires_at: string;
+  refresh_count: number;
+}
+
 export default function Home() {
   const [metrics, setMetrics] = useState<Metrics>({
     active_consents: 0,
@@ -28,6 +39,11 @@ export default function Home() {
   });
 
   const [scopeData, setScopeData] = useState<ScopeData[]>([]);
+
+  const [consents, setConsents] = useState<Consent[]>([]);
+
+  const [selectedConsent, setSelectedConsent] =
+    useState<Consent | null>(null);
 
   useEffect(() => {
     loadDashboardData();
@@ -49,13 +65,33 @@ export default function Home() {
       }));
 
       setScopeData(formattedScopes);
+
+      const consentsResponse =
+        await api.get("/consents");
+
+      setConsents(consentsResponse.data);
+
+      if (consentsResponse.data.length > 0) {
+        setSelectedConsent(
+          consentsResponse.data[0]
+        );
+      }
     } catch (error) {
-      console.error("Dashboard data load failed:", error);
+      console.error(
+        "Dashboard data load failed:",
+        error
+      );
     }
   }
 
   return (
-    <DashboardLayout sidebar={<Sidebar />}>
+    <DashboardLayout
+      sidebar={
+        <Sidebar
+          selectedConsent={selectedConsent}
+        />
+      }
+    >
       <div>
         <h1 className="text-3xl font-bold mb-2">
           Open Banking Consent Flow Explorer
@@ -72,6 +108,11 @@ export default function Home() {
         />
 
         <ConsentFlowChart data={scopeData} />
+
+        <AuditLog
+          consents={consents}
+          onSelectConsent={setSelectedConsent}
+        />
       </div>
     </DashboardLayout>
   );
