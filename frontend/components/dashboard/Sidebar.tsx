@@ -5,6 +5,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import TokenSimulator from "./TokenSimulator";
+
 import {
   Select,
   SelectContent,
@@ -118,6 +120,10 @@ export default function Sidebar({
           )}
         </CardContent>
       </Card>
+      
+      <TokenSimulator
+        selectedConsent={selectedConsent}
+      />
 
       <Card className="bg-slate-950 border-slate-800 text-white">
         <CardHeader>
