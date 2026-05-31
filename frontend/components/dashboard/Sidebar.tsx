@@ -37,6 +37,37 @@ interface SidebarProps {
   setScopeFilter: (value: string) => void;
 
   revokeConsent: () => void;
+
+  filteredConsents: Consent[];
+}
+
+function downloadSampleData(
+  consents: Consent[]
+) {
+  const blob = new Blob(
+    [JSON.stringify(consents, null, 2)],
+    {
+      type: "application/json",
+    }
+  );
+
+  const url =
+    window.URL.createObjectURL(blob);
+
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+
+  link.download = "consents.json";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+
+  window.URL.revokeObjectURL(url);
 }
 
 export default function Sidebar({
@@ -48,6 +79,7 @@ export default function Sidebar({
   setStatusFilter,
   setScopeFilter,
   revokeConsent,
+  filteredConsents,
 }: SidebarProps) {
   return (
     <div className="space-y-4">
@@ -278,6 +310,34 @@ export default function Sidebar({
           </div>
         </CardContent>
       </Card>
+
+      <Card className="bg-slate-950 border-slate-800 text-white">
+  <CardHeader>
+    <CardTitle>
+      Download Sample Data
+    </CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <button
+      onClick={() =>
+  downloadSampleData(filteredConsents)
+}
+      className="
+        w-full
+        bg-cyan-600
+        hover:bg-cyan-700
+        px-4
+        py-2
+        rounded
+        text-sm
+        font-medium
+      "
+    >
+      Download JSON
+    </button>
+  </CardContent>
+</Card>
     </div>
   );
 }
