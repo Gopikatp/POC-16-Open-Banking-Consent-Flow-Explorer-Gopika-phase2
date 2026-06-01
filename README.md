@@ -257,18 +257,62 @@ GET /api/token-analytics
 
 ## Project Structure
 
-```text
-POC-16-Open-Banking-Consent-Flow-Explorer
-
-├── backend
-├── frontend
-├── screenshots
-│   └── dashboard.png
+POC-16---Open-Banking-Consent-Flow-Explorer---Gopika
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── mock_data/
+│   │   │   └── consents.json
+│   │   ├── models/
+│   │   ├── routes/
+│   │   │   └── consents.py
+│   │   └── services/
+│   ├── requirements.txt
+│   └── ...
+│
+├── frontend/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── dashboard/
+│   │   │   ├── AuditLog.tsx
+│   │   │   ├── ConsentFlowChart.tsx
+│   │   │   ├── ConsentFlowDiagram.tsx
+│   │   │   ├── DashboardLayout.tsx
+│   │   │   ├── MetricsCards.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   └── TokenSimulator.tsx
+│   │   └── ui/
+│   │       ├── badge.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── select.tsx
+│   │       └── tooltip.tsx
+│   ├── lib/
+│   │   ├── api.ts
+│   │   └── utils.ts
+│   ├── public/
+│   ├── components.json
+│   ├── eslint.config.mjs
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   └── tsconfig.json
+│
+├── screenshots/
+│   ├── AuditLog with token_expiry.png
+│   ├── Consent_Flow.png
+│   ├── Dashboard.png
+│   ├── Filters.png
+│   └── Revoke_consent.png
+│
 ├── README.md
+├── UAT_CHECKLIST.md
 ├── VAR_REPORT.md
-└── UAT_CHECKLIST.md
-```
-
+└── .gitignore
 ---
 
 ## Local Setup
