@@ -257,6 +257,7 @@ GET /api/token-analytics
 
 ## Project Structure
 
+```text
 POC-16---Open-Banking-Consent-Flow-Explorer---Gopika
 ├── backend/
 │   ├── app/
@@ -313,6 +314,8 @@ POC-16---Open-Banking-Consent-Flow-Explorer---Gopika
 ├── UAT_CHECKLIST.md
 ├── VAR_REPORT.md
 └── .gitignore
+```
+
 ---
 
 ## Local Setup
