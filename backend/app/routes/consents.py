@@ -10,6 +10,10 @@ DATA_FILE = Path(__file__).parent.parent / "mock_data" / "consents.json"
 def load_data():
     with open(DATA_FILE, "r") as file:
         return json.load(file)
+    
+def save_data(data):
+    with open(DATA_FILE, "w") as file:
+        json.dump(data, file, indent=2)
 
 
 @router.get("/consents")
@@ -65,4 +69,21 @@ def token_analytics():
     return {
         "total_refresh_count": total_refresh,
         "average_refresh_count": round(total_refresh / len(consents), 2)
+    }
+
+@router.post("/revoke/{consent_id}")
+def revoke_consent(consent_id: str):
+    consents = load_data()
+
+    for consent in consents:
+        if consent["id"] == consent_id:
+            consent["status"] = "revoked"
+            save_data(consents)
+
+            return {
+                "message": "Consent revoked successfully"
+            }
+
+    return {
+        "error": "Consent not found"
     }

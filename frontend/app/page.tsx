@@ -123,28 +123,22 @@ export default function Home() {
     }
   );
 
-  function revokeConsent() {
-    if (!selectedConsent) return;
+  async function revokeConsent() {
+  if (!selectedConsent) return;
 
-    const updatedConsents = consents.map(
-      (consent) =>
-        consent.id === selectedConsent.id
-          ? {
-              ...consent,
-              status: "revoked",
-            }
-          : consent
-    ) as Consent[];
+  try {
+    await api.post(
+      `/revoke/${selectedConsent.id}`
+    );
 
-    setConsents(updatedConsents);
-
-    const updatedSelected =
-      updatedConsents.find(
-        (c) => c.id === selectedConsent.id
-      ) || null;
-
-    setSelectedConsent(updatedSelected);
+    await loadDashboardData();
+  } catch (error) {
+    console.error(
+      "Failed to revoke consent:",
+      error
+    );
   }
+}
 
   return (
     <DashboardLayout
