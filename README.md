@@ -1,21 +1,20 @@
 # Open Banking Consent Flow Explorer
 
-Real Rails Intelligence Dashboard for visualizing Open Banking consent management, permission scopes, token lifecycle events, and audit workflows.
+Infocreon Internship – Cinematic Intelligence Platform for visualizing Open Banking consent management, permission scopes, token lifecycle events, audit workflows, and consent intelligence.
 
 ---
 
-
-## Dashboard Preview
+# Dashboard Preview
 
 ![Dashboard Preview](screenshots/Dashboard.png)
 
 ---
 
-## Overview
+# Overview
 
-Open Banking Consent Flow Explorer is an intelligence dashboard that visualizes how customer consent is managed within Open Banking ecosystems.
+Open Banking Consent Flow Explorer is a cinematic intelligence platform that visualizes how customer consent is managed within Open Banking ecosystems.
 
-The dashboard provides operational visibility into:
+The platform provides operational visibility into:
 
 * Consent status tracking
 * Permission scope analytics
@@ -24,13 +23,13 @@ The dashboard provides operational visibility into:
 * Audit history
 * Open Banking consent flow visualization
 
-The project follows the Real Rails Intelligence Dashboard architecture using a FastAPI backend and Next.js frontend.
+The application follows the Infocreon Cinematic Interface standard using a FastAPI backend and Next.js frontend.
 
 ---
 
-## Technology Stack
+# Technology Stack
 
-### Frontend
+## Frontend
 
 * Next.js
 * TypeScript
@@ -39,25 +38,31 @@ The project follows the Real Rails Intelligence Dashboard architecture using a F
 * Recharts
 * Axios
 
-### Backend
+## Backend
 
 * FastAPI
 * Python
 * Pandas
 
+## Deployment
+
+* Docker
+* Docker Compose
+* WSL2
+
 ---
 
-## Data Sources
+# Data Sources
 
 The project references publicly available Open Banking resources and uses synthetic data where event-level data is unavailable.
 
-Sources:
+## Sources
 
 * Open Banking UK
 * Plaid Documentation
 * TrueLayer Documentation
 
-Mock Data:
+## Mock Data
 
 * Synthetic user consent events
 * Token refresh history
@@ -65,9 +70,9 @@ Mock Data:
 
 ---
 
-## Features
+# Features
 
-### Permission Scope Analytics
+## Permission Scope Analytics
 
 Visualizes distribution of Open Banking permission scopes.
 
@@ -80,7 +85,7 @@ Examples:
 
 ---
 
-### Consent Audit Log
+## Consent Audit Log
 
 Displays consent history including:
 
@@ -89,11 +94,11 @@ Displays consent history including:
 * Scope
 * Status
 
-Selecting a consent updates the intelligence sidebar.
+Selecting a consent automatically opens the Dynamic Intelligence Panel.
 
 ---
 
-### Token Expiry Simulator
+## Token Expiry Simulator
 
 Allows simulation of token lifetime.
 
@@ -105,7 +110,7 @@ Displays:
 
 ---
 
-### Consent Revocation Workflow
+## Consent Revocation Workflow
 
 Users can revoke consent and immediately observe:
 
@@ -115,11 +120,11 @@ Users can revoke consent and immediately observe:
 
 ---
 
-### Dashboard Filters
+## Dashboard Filters
 
 Supports filtering by:
 
-#### Bank
+### Bank
 
 * HSBC
 * Barclays
@@ -127,13 +132,13 @@ Supports filtering by:
 * Monzo
 * Santander
 
-#### Status
+### Status
 
 * Active
 * Expired
 * Revoked
 
-#### Scope
+### Scope
 
 * accounts.read
 * balances.read
@@ -142,7 +147,7 @@ Supports filtering by:
 
 ---
 
-### Download Sample Data
+## Download Sample Data
 
 Exports currently filtered consent records as:
 
@@ -152,65 +157,76 @@ consents.json
 
 ---
 
-### Consent Flow Visualization
+## Consent Flow Visualization
 
 Illustrates the Open Banking data-sharing process:
 
+```text
 Customer
-
-↓
-
+   ↓
 Consent Granted
-
-↓
-
+   ↓
 Bank
-
-↓
-
+   ↓
 Aggregator
-
-↓
-
+   ↓
 Third Party App
+```
 
 ---
 
-### Intelligence Sidebar
+# Cinematic Interface Layout
 
-Provides contextual insights:
+The application follows the Infocreon Cinematic Interface standard.
 
-* Why This Matters
-* Who Controls The Rail
-* Dashboard Intelligence
-* Selected Consent Details
-
----
-
-## Dashboard Layout
-
-The application follows the Real Rails dashboard standard.
-
-### Main Stage (70%)
+## Full-Screen Visualization Stage
 
 * Metrics Cards
-* Permission Scope Chart
+* Permission Scope Analytics
 * Consent Flow Diagram
 * Audit Log
+* Consent Intelligence Visualizations
 
-### Intelligence Sidebar (30%)
+## Dynamic Intelligence Panel
+
+The Intelligence Panel remains hidden until interaction occurs.
+
+Provides:
 
 * Why This Matters
 * Who Controls The Rail
-* Selected Consent
-* Token Simulator
+* Selected Consent Details
+* Token Lifecycle Intelligence
 * Dashboard Intelligence
 * Filters
 * Download Data
 
+The panel slides into view when a consent record is selected and can be dismissed using the close action.
+
 ---
 
-## System Architecture
+# Developer Signature
+
+**Architect:** Gopika T P
+
+**PoC ID:** 16
+
+**GitHub Username:** Gopikatp
+
+**Batch:** Batch 3 Interns
+
+### Technology Stack
+
+* Next.js
+* FastAPI
+* Tailwind CSS
+* Recharts
+* shadcn/ui
+* Docker
+
+---
+
+# System Architecture
 
 ```text
 Frontend (Next.js)
@@ -227,27 +243,27 @@ Analytics + Visualizations
 
 ---
 
-## API Endpoints
+# API Endpoints
 
-### Metrics
+## Metrics
 
 ```http
 GET /api/metrics
 ```
 
-### Consent Records
+## Consent Records
 
 ```http
 GET /api/consents
 ```
 
-### Permission Scopes
+## Permission Scopes
 
 ```http
 GET /api/scopes
 ```
 
-### Token Analytics
+## Token Analytics
 
 ```http
 GET /api/token-analytics
@@ -255,39 +271,41 @@ GET /api/token-analytics
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
-POC-16---Open-Banking-Consent-Flow-Explorer---Gopika
+POC-16-Open-Banking-Consent-Flow-Explorer-Gopika-phase2
 
 ├── backend/
-├── frontend/
-├── screenshots/
-│   ├── Dashboard.png
-│   ├── Consent_Flow.png
-│   ├── AuditLog with token_expiry.png
-│   ├── Filters.png
-│   └── Revoke_consent.png
+│   ├── app/
+│   ├── Dockerfile
+│   └── requirements.txt
 │
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── public/
+│   └── Dockerfile
+│
+├── screenshots/
+├── docker-compose.yml
 ├── README.md
 ├── VAR_REPORT.md
 ├── UAT_CHECKLIST.md
+├── repomix-output.xml
 └── .gitignore
 ```
 
-
-
 ---
 
-## Local Setup
+# Local Setup
 
-### Backend
+## Backend
 
 ```bash
 cd backend
-
 pip install -r requirements.txt
-
 uvicorn app.main:app --reload
 ```
 
@@ -299,13 +317,11 @@ http://localhost:8000
 
 ---
 
-### Frontend
+## Frontend
 
 ```bash
 cd frontend
-
 npm install
-
 npm run dev
 ```
 
@@ -317,31 +333,122 @@ http://localhost:3000
 
 ---
 
-## Validation
+# Docker Deployment
+
+## Prerequisites
+
+* Docker Desktop
+* Docker Compose
+* WSL2 (Windows)
+
+---
+
+## Build and Run
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Access Application
+
+### Frontend
+
+```text
+http://localhost:3000
+```
+
+### Backend API
+
+```text
+http://localhost:8000
+```
+
+### Swagger Documentation
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Docker Services
+
+### Frontend Container
+
+* Next.js Application
+* Port 3000
+
+### Backend Container
+
+* FastAPI Application
+* Port 8000
+
+### Network
+
+* Docker Compose Network
+* Internal Service Communication
+
+---
+
+# Docker Validation
+
+The application was successfully validated using Docker Compose.
+
+Verified Components:
+
+* Frontend Container
+* Backend Container
+* Docker Network
+* Swagger API Documentation
+* API Connectivity
+* Frontend ↔ Backend Communication
+
+Verification URLs:
+
+```text
+http://localhost:3000
+http://localhost:8000
+http://localhost:8000/docs
+```
+
+All services were successfully built, started, and tested through Docker Compose deployment.
+
+---
+
+# Validation Documents
 
 The project includes:
 
 * VAR_REPORT.md
 * UAT_CHECKLIST.md
 
-These documents validate visualization quality and user acceptance testing requirements.
+These documents validate:
+
+* Visualization quality
+* Functional correctness
+* API connectivity
+* Dashboard interactions
+* Docker deployment readiness
 
 ---
 
-## Future Enhancements
+# Future Enhancements
 
 * Real Open Banking provider integrations
 * OAuth consent flow simulation
 * Real-time token lifecycle monitoring
 * Regulatory compliance insights
 * Multi-bank consent analytics
+* Live Open Banking event ingestion
 
 ---
 
-## Author
+# Author
 
 **Gopika T P**
 
-POC #16 – Open Banking Consent Flow Explorer
+PoC #16 – Open Banking Consent Flow Explorer
 
-Real Rails Intelligence Library
+Infocreon Internship – Batch 3 Interns
