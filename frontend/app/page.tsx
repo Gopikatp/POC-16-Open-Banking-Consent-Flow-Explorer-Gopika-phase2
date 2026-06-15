@@ -46,6 +46,9 @@ export default function Home() {
   const [selectedConsent, setSelectedConsent] =
     useState<Consent | null>(null);
 
+  const [panelOpen, setPanelOpen] =
+  useState(false);
+
   const [bankFilter, setBankFilter] =
     useState("All");
 
@@ -145,6 +148,8 @@ export default function Home() {
 
   return (
     <DashboardLayout
+      isPanelOpen={panelOpen}
+      onClosePanel={() => setPanelOpen(false)}
       sidebar={
         <Sidebar
           selectedConsent={selectedConsent}
@@ -160,12 +165,12 @@ export default function Home() {
       }
     >
       <div>
-        <h1 className="text-3xl font-bold mb-2">
-          Open Banking Consent Flow Explorer
+        <h1 className="text-4xl font-bold mb-2 text-cyan-300 ml-1">
+            Open Banking Consent Flow Explorer
         </h1>
 
-        <p className="text-slate-400 mb-8">
-          Real Rails Intelligence Dashboard
+        <p className="text-slate-400 mb-8 ml-2">
+          Open Banking Intelligence Platform
         </p>
 
         <MetricsCards
@@ -191,7 +196,10 @@ export default function Home() {
 
         <AuditLog
           consents={filteredConsents}
-          onSelectConsent={setSelectedConsent}
+          onSelectConsent={(consent) => {
+            setSelectedConsent(consent);
+            setPanelOpen(true);
+          }}
         />
       </div>
     </DashboardLayout>

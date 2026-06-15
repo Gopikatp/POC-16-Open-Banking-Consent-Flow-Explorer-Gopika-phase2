@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Open Banking Consent Flow Explorer",
-  description: "Real Rails Intelligence Dashboard",
+  title:
+    "Infocreon Internship - Open Banking Consent Flow Explorer",
+  description:
+    "Open Banking Intelligence Platform",
 };
 
 export default function RootLayout({

@@ -69,6 +69,63 @@ function downloadSampleData(
   window.URL.revokeObjectURL(url);
 }
 
+function downloadCSVData(
+  consents: Consent[]
+) {
+  const headers = [
+    "id",
+    "bank",
+    "scope",
+    "status",
+    "created_at",
+    "expires_at",
+    "refresh_count",
+  ];
+
+  const rows = consents.map(
+    (consent) => [
+      consent.id,
+      consent.bank,
+      consent.scope,
+      consent.status,
+      consent.created_at,
+      consent.expires_at,
+      consent.refresh_count,
+    ]
+  );
+
+  const csvContent = [
+    headers.join(","),
+    ...rows.map((row) =>
+      row.join(",")
+    ),
+  ].join("\n");
+
+  const blob = new Blob(
+    [csvContent],
+    {
+      type: "text/csv;charset=utf-8;",
+    }
+  );
+
+  const url =
+    window.URL.createObjectURL(blob);
+
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+  link.download = "consents.csv";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+
+  window.URL.revokeObjectURL(url);
+}
+
 export default function Sidebar({
   selectedConsent,
   bankFilter,
@@ -402,36 +459,56 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      {/* Download JSON */}
-      <Card className="bg-slate-950 border-slate-800 text-white">
-        <CardHeader>
-          <CardTitle>
-            Download Sample Data
-          </CardTitle>
-        </CardHeader>
+      {/* Download Sample Data */}
+<Card className="bg-slate-950 border-slate-800 text-white">
+  <CardHeader>
+    <CardTitle>
+      Download Sample Data
+    </CardTitle>
+  </CardHeader>
 
-        <CardContent>
-          <button
-            onClick={() =>
-              downloadSampleData(
-                filteredConsents
-              )
-            }
-            className="
-              w-full
-              bg-cyan-600
-              hover:bg-cyan-700
-              px-4
-              py-2
-              rounded
-              text-sm
-              font-medium
-            "
-          >
-            Download JSON
-          </button>
-        </CardContent>
-      </Card>
+  <CardContent className="space-y-3">
+    <button
+      onClick={() =>
+        downloadSampleData(
+          filteredConsents
+        )
+      }
+      className="
+        w-full
+        bg-cyan-600
+        hover:bg-cyan-700
+        px-4
+        py-2
+        rounded
+        text-sm
+        font-medium
+      "
+    >
+      Download JSON
+    </button>
+
+    <button
+      onClick={() =>
+        downloadCSVData(
+          filteredConsents
+        )
+      }
+      className="
+        w-full
+        bg-emerald-600
+        hover:bg-emerald-700
+        px-4
+        py-2
+        rounded
+        text-sm
+        font-medium
+      "
+    >
+      Download CSV
+    </button>
+  </CardContent>
+</Card>
     </div>
   );
 }
