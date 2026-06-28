@@ -123,26 +123,6 @@ export default function DashboardLayout({
 
                 <div className="rounded-xl bg-slate-900/60 border border-slate-800 p-4">
                   <p className="text-sm text-slate-400 mb-1">
-                    PoC ID
-                  </p>
-
-                  <p className="text-lg font-semibold text-white">
-                    16
-                  </p>
-                </div>
-
-                <div className="rounded-xl bg-slate-900/60 border border-slate-800 p-4">
-                  <p className="text-sm text-slate-400 mb-1">
-                    GitHub Username
-                  </p>
-
-                  <p className="text-lg font-semibold text-white">
-                    Gopikatp
-                  </p>
-                </div>
-
-                <div className="rounded-xl bg-slate-900/60 border border-slate-800 p-4">
-                  <p className="text-sm text-slate-400 mb-1">
                     Batch
                   </p>
 

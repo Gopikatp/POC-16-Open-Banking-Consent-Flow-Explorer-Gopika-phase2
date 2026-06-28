@@ -12,6 +12,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://openbank-frontend.calmcoast-c9142dd2.centralindia.azurecontainerapps.io",
     ],
     allow_credentials=True,
     allow_methods=["*"],

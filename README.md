@@ -209,10 +209,6 @@ The panel slides into view when a consent record is selected and can be dismisse
 
 **Architect:** Gopika T P
 
-**PoC ID:** 16
-
-**GitHub Username:** Gopikatp
-
 **Batch:** Batch 3 Interns
 
 ### Technology Stack
