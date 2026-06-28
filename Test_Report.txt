@@ -1,11 +1,44 @@
-POC 16 Selenium Test Report
-========================================
+========================================================================
+  INFOCREON PoC 16 -- UAT Test Report
+  Open Banking Consent Flow Explorer
+------------------------------------------------------------------------
+  Target URL : https://openbank-frontend.calmcoast-c9142dd2.centralindia.azurecontainerapps.io
+  Run At     : 2026-06-28 23:09:51
+  Execution  : 47.5 sec
+  Total Tests: 8  |  PASSED: 8  |  FAILED: 0  |  SKIPPED: 0
+========================================================================
 
-PASS - Page Loaded
-PASS - Dashboard Title
-PASS - Metrics Cards
-PASS - Scope Chart
-PASS - Consent Flow Diagram
-PASS - Audit Log Visible
-PASS - Intelligence Panel Opened
-PASS - Backend API
+  [+] [PASS]   TC-1 | Page Load
+       Detail : Application loaded successfully.
+
+  [+] [PASS]   TC-2 | Dashboard Title
+       Detail : Dashboard title verified.
+
+  [+] [PASS]   TC-3 | Metrics Cards
+       Detail : All metrics cards rendered successfully.
+
+  [+] [PASS]   TC-4 | Permission Scope Chart
+       Detail : Permission Scope Distribution chart rendered successfully.
+
+  [+] [PASS]   TC-5 | Consent Flow Diagram
+       Detail : React Flow diagram rendered successfully.
+
+  [+] [PASS]   TC-6 | Audit Log Interaction
+       Detail : Audit log displayed and consent row selected successfully.
+
+  [+] [PASS]   TC-7 | Intelligence Panel
+       Detail : Intelligence Panel opened successfully after selecting consent.
+
+  [+] [PASS]   TC-8 | Backend API Handshake
+       Detail : GET /api/metrics returned HTTP 200.
+
+------------------------------------------------------------------------
+  OVERALL VERDICT : [PASS] ALL TESTS PASSED
+========================================================================
+
+  Notes:
+  - Selenium WebDriver executed against the live Azure deployment.
+  - Backend API connectivity verified successfully.
+  - Intelligence Panel interaction validated.
+  - Report generated automatically by test_poc16.py
+========================================================================
