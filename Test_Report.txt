@@ -1,0 +1,11 @@
+POC 16 Selenium Test Report
+========================================
+
+PASS - Page Loaded
+PASS - Dashboard Title
+PASS - Metrics Cards
+PASS - Scope Chart
+PASS - Consent Flow Diagram
+PASS - Audit Log Visible
+PASS - Intelligence Panel Opened
+PASS - Backend API
