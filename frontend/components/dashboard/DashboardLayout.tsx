@@ -48,7 +48,7 @@ export default function DashboardLayout({
 
       {/* Intelligence Panel */}
       <div
-        id="intelligence-panel"
+        data-testid="intelligence-panel"
         className={`
           fixed
           top-16

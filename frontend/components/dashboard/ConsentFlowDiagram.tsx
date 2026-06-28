@@ -127,7 +127,11 @@ const edges = [
 
 export default function ConsentFlowDiagram() {
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6 mt-6">
+    <div 
+      id="consent-flow-diagram"
+      data-testid="consent-flow-diagram"
+      className="bg-[#0B1117] border border-slate-800 rounded-lg p-6 mt-6"
+    >
       <h2 className="text-xl font-semibold mb-6">
         Open Banking Consent Flow
       </h2>

@@ -18,7 +18,10 @@ export default function AuditLog({
   onSelectConsent,
 }: AuditLogProps) {
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6 mt-6">
+    <div 
+      data-testid="audit-log"
+      className="bg-[#0B1117] border border-slate-800 rounded-lg p-6 mt-6"
+    >
       <h2 className="text-xl font-semibold mb-4">
         Audit Log
       </h2>

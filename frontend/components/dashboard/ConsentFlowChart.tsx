@@ -18,7 +18,11 @@ interface Props {
 
 export default function ConsentFlowChart({ data }: Props) {
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
+    <div 
+      id="scope-chart"
+      data-testid="scope-chart"
+      className="bg-[#0B1117] border border-slate-800 rounded-lg p-6"
+    >
       <h2 className="text-xl font-semibold mb-6">
         Permission Scope Distribution
       </h2>
