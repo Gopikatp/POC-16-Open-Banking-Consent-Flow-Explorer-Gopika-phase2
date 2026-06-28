@@ -38,6 +38,7 @@ export default function AuditLog({
             {consents.map((consent) => (
               <tr
                 key={consent.id}
+                data-testid={`consent-row-${consent.id}`}
                 onClick={() => onSelectConsent(consent)}
                 className="border-b border-slate-800 hover:bg-slate-900 cursor-pointer"
               >

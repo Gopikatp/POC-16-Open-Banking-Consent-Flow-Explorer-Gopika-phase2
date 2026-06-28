@@ -31,6 +31,7 @@ export default function DashboardLayout({
           </div>
 
           <button
+            id="info-button"
             onClick={() => setShowInfo(true)}
             className="w-8 h-8 rounded-full border border-cyan-500/40 hover:bg-cyan-500/10 transition"
             title="Session Information"
@@ -47,6 +48,7 @@ export default function DashboardLayout({
 
       {/* Intelligence Panel */}
       <div
+        id="intelligence-panel"
         className={`
           fixed
           top-16
@@ -74,6 +76,7 @@ export default function DashboardLayout({
           </h2>
 
           <button
+            id="close-panel"
             onClick={onClosePanel}
             className="text-slate-400 hover:text-white"
           >
@@ -103,6 +106,7 @@ export default function DashboardLayout({
                 </div>
 
                 <button
+                  id="close-info"
                   onClick={() => setShowInfo(false)}
                   className="text-slate-400 hover:text-white text-2xl transition"
                 >
