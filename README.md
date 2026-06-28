@@ -205,6 +205,27 @@ The panel slides into view when a consent record is selected and can be dismisse
 
 ---
 
+## Selenium End-to-End Testing
+
+The deployed Azure application was validated using Selenium WebDriver.
+
+### Automated Test Coverage
+
+- Page Load Verification
+- Dashboard Title Verification
+- Metrics Cards Validation
+- Permission Scope Chart Rendering
+- Consent Flow Diagram Rendering
+- Audit Log Verification
+- Intelligence Panel Interaction
+- Backend API Handshake Validation
+
+### Test Result
+
+All automated validation tests passed successfully.
+
+**Status:** PASS
+
 # Developer Signature
 
 **Architect:** Gopika T P
@@ -285,6 +306,7 @@ POC-16-Open-Banking-Consent-Flow-Explorer-Gopika-phase2
 │   └── Dockerfile
 │
 ├── screenshots/
+├── selenium/
 ├── docker-compose.yml
 ├── README.md
 ├── VAR_REPORT.md

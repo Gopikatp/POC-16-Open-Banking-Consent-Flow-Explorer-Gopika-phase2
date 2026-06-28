@@ -146,6 +146,33 @@ Verified Endpoints:
 
 ---
 
+## Selenium Automation Validation
+
+### Environment
+
+- Frontend: Azure Container Apps
+- Backend: Azure Container Apps
+- Browser: Google Chrome
+- Automation Framework: Selenium WebDriver
+- Language: Python
+
+### Automated Validation
+
+| Test                     | Result |
+|--------------------------|--------|
+| Page Load                | PASS   |
+| Dashboard Title          | PASS   |
+| Metrics Cards            | PASS   |
+| Permission Scope Chart   | PASS   |
+| Consent Flow Diagram     | PASS   |
+| Audit Log                | PASS   |
+| Intelligence Panel       | PASS   |
+| Backend API Connectivity | PASS   |
+
+Overall Result: PASS
+
+---
+
 ## Developer Signature Validation
 
 | Requirement                 | Status |

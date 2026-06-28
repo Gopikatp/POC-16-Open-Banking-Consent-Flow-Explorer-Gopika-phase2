@@ -162,6 +162,20 @@ This User Acceptance Testing checklist validates dashboard functionality, API in
 
 ---
 
+## Selenium Automation Checklist
+
+- [x] Application launches successfully
+- [x] Dashboard renders correctly
+- [x] Metrics cards display correctly
+- [x] Charts render correctly
+- [x] Consent Flow Diagram renders
+- [x] Audit Log loads
+- [x] Intelligence Panel interaction verified
+- [x] Backend API communication verified
+- [x] Automated Selenium execution completed successfully
+
+---
+
 ## Final Acceptance Summary
 
 ### Acceptance Criteria
